@@ -210,6 +210,7 @@ declare namespace MapboxGL {
 
   class PointAnnotation extends Component<PointAnnotationProps> {}
   class Callout extends Component<CalloutProps> {}
+  class MarkerView extends Component<MarkerViewProps> {}
 
   /**
    * Sources
@@ -647,6 +648,11 @@ export interface CalloutProps extends Omit<ViewProps, 'style'> {
   contentStyle?: StyleProp<WithExpression<ViewStyle>>;
   tipStyle?: StyleProp<WithExpression<ViewStyle>>;
   textStyle?: StyleProp<WithExpression<ViewStyle>>;
+}
+
+export interface MarkerViewProps {
+  coordinate: GeoJSON.Position;
+  anchor?: Point;
 }
 
 export interface TileSourceProps extends ViewProps {
